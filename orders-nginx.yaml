@@ -1,21 +1,18 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: orders-nginx
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-     matchLabels:
-       app: orders-nginx
-  template:
-    metadata:
-      labels:
-        app: orders-nginx
-    spec:
-      containers:
-      - name: orders-nginx
-        image: aquademo.azurecr.io/orders-nginx:1.0
-        env:
-        ports:
-          - containerPort: 80
+trigger:
+- main
+   
+pool:
+  vmImage: 'ubuntu-latest'
+   
+
+variables:
+  imageName: 'orders-nginx'
+  DOCKER_BUILDKIT: 1
+    
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: app/Dockerfile
