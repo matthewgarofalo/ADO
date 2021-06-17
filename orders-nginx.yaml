@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-nginx
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+     matchLabels:
+       app: orders-nginx
+  template:
+    metadata:
+      labels:
+        app: orders-nginx
+    spec:
+      containers:
+      - name: orders-nginx
+        image: aquademo.azurecr.io/orders-nginx:1.0
+        env:
+        ports:
+          - containerPort: 80
