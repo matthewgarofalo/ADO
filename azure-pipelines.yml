@@ -18,7 +18,7 @@ stages:
       inputs:
         image: 'nginx:latest'
         scanType: 'dockerarchive'
-        register: true
+        register: false
         hideBase: false
         showNegligible: false
         windowsScannerVersion: '4.2.0'
