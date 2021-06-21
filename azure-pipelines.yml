@@ -3,7 +3,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      vmImage: 'ubuntu:latest'
+      vmImage: 'Ubuntu-16.04'
     continueOnError: true
     steps:
     - script: echo "hello to my first Build"    
@@ -17,7 +17,7 @@ stages:
 
     - task: aquasecScanner@4
       inputs:
-        image: 'ubuntu:latest'
+        image: 'Ubuntu-16.04'
         scanType: 'local'
         register: false
         hideBase: false
