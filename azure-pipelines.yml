@@ -6,7 +6,15 @@ stages:
       vmImage: 'Ubuntu-16.04'
     continueOnError: true
     steps:
-    - script: echo "hello to my first Build"
+    - script: echo "hello to my first Build"    
+
+    - task: Docker@2
+      displayName: Login to Aqua
+      inputs:
+        command: login
+        containerRegistry: jakeaquaregistry
+
+
     - task: aquasecScanner@4
       inputs:
         image: 'Ubuntu'
