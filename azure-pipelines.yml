@@ -17,7 +17,7 @@ stages:
 
     - task: aquasecScanner@4
       inputs:
-        image: 'nginx:latest'
+        image: 'docker.io/nginx:latest'
         scanType: 'local'
         register: false
         hideBase: false
