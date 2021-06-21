@@ -17,10 +17,11 @@ stages:
     - task: aquasecScanner@4
       inputs:
         image: 'nginx:latest'
-        scanType: 'local'
-        register: false
+        scanType: 'dockerarchive'
+        register: true
         hideBase: false
         showNegligible: false
+        windowsScannerVersion: '4.2.0'
         scanner: 'registry.aquasec.com/scanner:6.0'
         registry: 'Docker Hub'
         connection: 'Aqua Demo Console Jake'
