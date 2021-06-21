@@ -16,7 +16,7 @@ stages:
         showNegligible: false
         windowsScannerVersion: '4.2.0'
         registry: 'Docker Hub'
-        connection: 'http://aquasec-demo2429-vm0.eastus.cloudapp.azure.com/'
+        connection: 'Aqua Demo Console Jake'
         caCertificates: true
 - stage: dev_deploy
   jobs:
