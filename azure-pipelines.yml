@@ -17,6 +17,7 @@ stages:
 
     - task: aquasecScanner@4
       inputs:
+        registry: 'Docker Hub'
         image: 'nginx:latest'
         scanType: 'local'
         register: false
