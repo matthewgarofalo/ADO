@@ -3,7 +3,7 @@ stages:
   jobs:
   - job: Build
     pool:
-      vmImage: 'Ubuntu-16.04'
+      vmImage: 'ubuntu'
     continueOnError: true
     steps:
     - script: echo "hello to my first Build"    
