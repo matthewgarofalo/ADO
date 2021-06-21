@@ -7,6 +7,17 @@ stages:
     continueOnError: true
     steps:
     - script: echo "hello to my first Build"
+    - task: aquasecScanner@4
+      inputs:
+        image: 'Ubuntu'
+        scanType: 'local'
+        register: false
+        hideBase: false
+        showNegligible: false
+        windowsScannerVersion: '4.2.0'
+        registry: 'Docker Hub'
+        connection: 'Aqua Demo Console'
+        caCertificates: true
 - stage: dev_deploy
   jobs:
   - deployment: dev_deploy
