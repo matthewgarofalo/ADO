@@ -23,6 +23,6 @@ stages:
         showNegligible: false
         windowsScannerVersion: '4.2.0'
         scanner: 'registry.aquasec.com/scanner:6.0'
-        registry: 'Github'
+        registry: 'https://hub.docker.com/_/nginx'
         connection: 'Aqua Demo Console Jake'
         caCertificates: true
