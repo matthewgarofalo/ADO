@@ -17,7 +17,7 @@ stages:
 
     - task: aquasecScanner@4
       inputs:
-        image: 'Ubuntu-16.04'
+        image: 'nginx:latest'
         scanType: 'local'
         register: false
         hideBase: false
