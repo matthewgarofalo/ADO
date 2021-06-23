@@ -1,29 +1,6 @@
-stages:
-- stage: Build
-  jobs:
-  - job: Build
-    pool:
-      vmImage: 'Ubuntu-18.04'
-    continueOnError: true
-    steps:
-    - script: echo "hello to my first Build"    
-
-    - task: Docker@2
-      displayName: Login to Aqua
-      inputs:
-        command: login
-        containerRegistry: jakeaquaregistry
-
-    - task: aquasecScanner@4
-      env: 
-        SCALOCK_LOG_LEVEL: 'DEBUG'
-      inputs:
-        image: 'nginx/nginx:latest'
-        scanType: 'local'
-        register: false
-        hideBase: false
-        showNegligible: false
-        scanner: 'registry.aquasec.com/scanner:6.0'
-        registry: 'Docker Hub'
-        connection: 'Aqua Demo Console Jake'
-        caCertificates: true
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Hub'
+    repository: 'matthewgarofalo/express'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
