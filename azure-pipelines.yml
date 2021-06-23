@@ -18,7 +18,7 @@ stages:
       env: 
         SCALOCK_LOG_LEVEL: 'DEBUG'
       inputs:
-        image: 'nginx:latest'
+        image: 'nginx/nginx:latest'
         scanType: 'local'
         register: false
         hideBase: false
